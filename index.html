@@ -35,7 +35,12 @@
         const gridEl = document.getElementById('grid');
         const keyboardEl = document.getElementById('keyboard');
         const cheatToast = document.getElementById('cheat-toast');
-        function showCheat() { cheatToast.textContent = '🔥 ' + solution + ' 🔥'; cheatToast.classList.remove('show'); void cheatToast.offsetWidth; cheatToast.classList.add('show'); }
+        function showCheat() { 
+            cheatToast.textContent = `🔥 ${solution} 🔥`; 
+            cheatToast.classList.remove('show'); 
+            void cheatToast.offsetWidth; // Force reflow
+            cheatToast.classList.add('show'); 
+        }
         let cheatBuffer = "";
         let lastKeyTime = 0;
         function init() { 
